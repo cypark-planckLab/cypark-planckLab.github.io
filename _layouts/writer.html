@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+<main id="main" class="writer-page" aria-label="Content">
+  <form class="writer-shell" data-writer>
+    <header class="writer-topbar">
+      <a class="writer-exit" href="{{ '/' | relative_url }}" aria-label="홈">←</a>
+      <div class="writer-status" data-writer-status>새 글</div>
+      <div class="writer-actions">
+        <button class="writer-button" type="button" data-writer-action="reset">새 글</button>
+        <button class="writer-button" type="button" data-writer-action="copy">Markdown 복사</button>
+        <button class="writer-button writer-button--primary" type="button" data-writer-action="download">발행 파일</button>
+      </div>
+    </header>
+
+    <div class="writer-grid">
+      <section class="writer-editor-pane" aria-label="글 편집">
+        <input class="writer-title-input" type="text" data-writer-field="title" placeholder="제목을 입력하세요" autocomplete="off">
+
+        <div class="writer-toolbar" aria-label="편집 도구">
+          <button type="button" data-writer-insert="h2">H2</button>
+          <button type="button" data-writer-insert="bold">B</button>
+          <button type="button" data-writer-insert="list">목록</button>
+          <button type="button" data-writer-insert="quote">인용</button>
+          <button type="button" data-writer-insert="code">코드</button>
+        </div>
+
+        <textarea class="writer-body-input" data-writer-field="body" spellcheck="false"></textarea>
+      </section>
+
+      <aside class="writer-side-pane" aria-label="발행 설정">
+        <section class="writer-panel">
+          <h2>발행 설정</h2>
+          <label>
+            <span>상태</span>
+            <select data-writer-field="visibility">
+              <option value="published">공개</option>
+              <option value="draft">비공개</option>
+            </select>
+          </label>
+          <label>
+            <span>작성일</span>
+            <input type="datetime-local" data-writer-field="date">
+          </label>
+          <label>
+            <span>카테고리</span>
+            <input type="text" data-writer-field="category" placeholder="예: algorithm">
+          </label>
+          <label>
+            <span>태그</span>
+            <input type="text" data-writer-field="tags" placeholder="예: python, dp, memo">
+          </label>
+          <label>
+            <span>파일명</span>
+            <input type="text" data-writer-field="slug" placeholder="자동 생성">
+          </label>
+        </section>
+
+        <section class="writer-panel">
+          <h2>양식</h2>
+          <div class="writer-template-list">
+            <button type="button" data-writer-template="study">공부 기록</button>
+            <button type="button" data-writer-template="concept">개념 정리</button>
+            <button type="button" data-writer-template="trouble">문제 해결</button>
+          </div>
+        </section>
+
+        <section class="writer-panel writer-panel--output">
+          <h2>미리보기</h2>
+          <p class="writer-file-name" data-writer-file-name>_posts/post.md</p>
+          <article class="writer-preview" data-writer-preview></article>
+        </section>
+      </aside>
+    </div>
+  </form>
+</main>

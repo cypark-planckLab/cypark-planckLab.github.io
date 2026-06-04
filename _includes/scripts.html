@@ -4,6 +4,10 @@
 
 <script async src="{{ '/assets/javascripts/main.js' | relative_url }}"></script>
 
+{% if page.writer %}
+  <script src="{{ '/assets/javascripts/writer.js' | relative_url }}"></script>
+{% endif %}
+
 {% if site.search %}
   {%- assign search_provider = site.search_provider | default: "lunr" -%}
   {%- case search_provider -%}
