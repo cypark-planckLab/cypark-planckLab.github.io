@@ -17,7 +17,7 @@ lang: en-US
 title: Study In Planck
 email: cypark@planck.co.kr
 description:
-baseurl: ""
+baseurl:
 url: https://cypark-planckLab.github.io
 author: cypark
   name:
